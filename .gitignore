@@ -27,3 +27,4 @@ pb_migrations/
 *.db
 *.db-shm
 *.db-wal
+AFFIRMATION_LIBRARY.md

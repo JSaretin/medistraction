@@ -5,10 +5,12 @@
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
-	"background_color": "#1a1a2e",
+	"display_override": ["standalone", "fullscreen"],
+	"background_color": "#0f0f23",
 	"theme_color": "#6366f1",
-	"orientation": "portrait",
+	"orientation": "any",
 	"categories": ["health", "lifestyle", "productivity"],
+	"prefer_related_applications": false,
 	"icons": [
 		{
 			"src": "/favicon.png",

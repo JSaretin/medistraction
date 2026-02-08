@@ -6,25 +6,45 @@
 	let showPrompt = false;
 
 	onMount(() => {
+		// Check if already in standalone mode
+		const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+			|| (window.navigator as any).standalone
+			|| document.referrer.includes('android-app://');
+
+		if (isStandalone) {
+			console.log('[PWA] Already running in standalone mode');
+			return;
+		}
+
 		// Listen for the beforeinstallprompt event
-		window.addEventListener('beforeinstallprompt', (e) => {
+		const handleBeforeInstall = (e: Event) => {
 			e.preventDefault();
 			deferredPrompt = e;
+			console.log('[PWA] Install prompt captured');
 
 			// Show install prompt if not already installed
 			if (!$isInstalled) {
 				setTimeout(() => {
 					showPrompt = true;
-				}, 5000); // Show after 5 seconds
+				}, 3000); // Show after 3 seconds
 			}
-		});
+		};
+
+		window.addEventListener('beforeinstallprompt', handleBeforeInstall);
 
 		// Listen for successful installation
-		window.addEventListener('appinstalled', () => {
+		const handleInstalled = () => {
 			console.log('[PWA] App installed successfully');
 			showPrompt = false;
 			deferredPrompt = null;
-		});
+		};
+
+		window.addEventListener('appinstalled', handleInstalled);
+
+		return () => {
+			window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
+			window.removeEventListener('appinstalled', handleInstalled);
+		};
 	});
 
 	async function handleInstall() {

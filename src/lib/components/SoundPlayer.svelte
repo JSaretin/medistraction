@@ -94,6 +94,8 @@
 		gap: 0.75rem;
 		animation: slideIn 0.3s ease-out;
 		box-shadow: var(--shadow);
+		color: var(--text);
+		z-index: 1001;
 	}
 
 	.pulse {
