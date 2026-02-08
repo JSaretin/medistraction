@@ -4,7 +4,6 @@
 
 	let audioContext: AudioContext | null = null;
 	let checkInterval: ReturnType<typeof setInterval> | null = null;
-	let lastPlayedSound = '';
 
 	onMount(() => {
 		// Initialize Web Audio API
@@ -58,7 +57,6 @@
 
 			// Play sound
 			source.start(0);
-			lastPlayedSound = randomSound.name;
 
 			// Update store
 			sessionStore.soundPlayed();
@@ -72,60 +70,3 @@
 		}
 	}
 </script>
-
-{#if lastPlayedSound}
-	<div class="sound-indicator">
-		<div class="pulse"></div>
-		<span>🔊 {lastPlayedSound}</span>
-	</div>
-{/if}
-
-<style>
-	.sound-indicator {
-		position: fixed;
-		top: 2rem;
-		right: 2rem;
-		padding: 1rem 1.5rem;
-		background: var(--surface);
-		border: 1px solid var(--primary);
-		border-radius: var(--border-radius);
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		animation: slideIn 0.3s ease-out;
-		box-shadow: var(--shadow);
-		color: var(--text);
-		z-index: 1001;
-	}
-
-	.pulse {
-		width: 12px;
-		height: 12px;
-		background: var(--primary);
-		border-radius: 50%;
-		animation: pulse 1.5s infinite;
-	}
-
-	@keyframes slideIn {
-		from {
-			opacity: 0;
-			transform: translateX(100%);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			opacity: 1;
-			transform: scale(1);
-		}
-		50% {
-			opacity: 0.5;
-			transform: scale(1.3);
-		}
-	}
-</style>
