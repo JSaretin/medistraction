@@ -3,9 +3,19 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
+declare global {
+	interface WorkerGlobalScope {
+		__WB_MANIFEST: Array<{ url: string; revision: string | null }>;
+	}
+}
+
 import { build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
+
+// Workbox manifest injection point (required for @vite-pwa/sveltekit)
+// This will be replaced with the actual precache manifest during build
+const manifest = self.__WB_MANIFEST;
 
 // Create a unique cache name for this version
 const CACHE_NAME = `meditract-cache-${version}`;
