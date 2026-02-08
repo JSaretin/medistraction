@@ -56,21 +56,19 @@
 	});
 
 	function handleDifficultyChange() {
+		// Only update wait times, keep other settings independent
 		switch (difficulty) {
 			case 'easy':
 				minWait = 60;
 				maxWait = 180;
-				allowMultipleSounds = false;
 				break;
 			case 'medium':
 				minWait = 30;
 				maxWait = 120;
-				allowMultipleSounds = false;
 				break;
 			case 'hard':
 				minWait = 10;
 				maxWait = 60;
-				allowMultipleSounds = true;
 				break;
 		}
 	}
@@ -109,11 +107,11 @@
 	<h2>Start Meditation Session</h2>
 
 	<div class="form-group">
-		<label for="difficulty">Difficulty Level</label>
+		<label for="difficulty">Difficulty Preset (Wait Times)</label>
 		<select id="difficulty" bind:value={difficulty} on:change={handleDifficultyChange}>
-			<option value="easy">Easy (Longer intervals)</option>
-			<option value="medium">Medium (Moderate intervals)</option>
-			<option value="hard">Hard (Short intervals, multiple sounds)</option>
+			<option value="easy">Easy (60-180s intervals)</option>
+			<option value="medium">Medium (30-120s intervals)</option>
+			<option value="hard">Hard (10-60s intervals)</option>
 		</select>
 	</div>
 
@@ -298,6 +296,7 @@
 		text-align: left;
 		transition: all 0.2s;
 		width: 100%;
+		color: var(--text);
 	}
 
 	.sound-item:hover {
