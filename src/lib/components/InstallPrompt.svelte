@@ -57,7 +57,7 @@
 
 			<div class="prompt-icon">🧘</div>
 
-			<h3 id="install-title">Install MediTract</h3>
+			<h3 id="install-title">Install Medistraction</h3>
 			<p>Install the app for quick access and offline use</p>
 
 			<div class="features">

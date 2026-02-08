@@ -1,6 +1,6 @@
 {
-	"name": "MediTract - Distraction Immunity Training",
-	"short_name": "MediTract",
+	"name": "Medistraction - Distraction Immunity Training",
+	"short_name": "Medistraction",
 	"description": "Train your mind to resist distractions through mindful meditation with randomized sound interruptions",
 	"start_url": "/",
 	"scope": "/",

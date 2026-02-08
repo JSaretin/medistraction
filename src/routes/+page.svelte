@@ -103,7 +103,7 @@
 
 <main>
 	<header>
-		<h1>🧘 MediTract</h1>
+		<h1>🧘 Medistraction</h1>
 		<p class="tagline">Train Your Mind to Resist Distractions</p>
 	</header>
 

@@ -3,22 +3,12 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-declare global {
-	interface WorkerGlobalScope {
-		__WB_MANIFEST: Array<{ url: string; revision: string | null }>;
-	}
-}
-
 import { build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
-// Workbox manifest injection point (required for @vite-pwa/sveltekit)
-// This will be replaced with the actual precache manifest during build
-const manifest = self.__WB_MANIFEST;
-
 // Create a unique cache name for this version
-const CACHE_NAME = `meditract-cache-${version}`;
+const CACHE_NAME = `medistraction-cache-${version}`;
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
@@ -27,10 +17,10 @@ const STATIC_ASSETS = [
 ];
 
 // Cache for audio files
-const AUDIO_CACHE = 'meditract-audio-cache';
+const AUDIO_CACHE = 'medistraction-audio-cache';
 
 // Cache for API responses
-const API_CACHE = 'meditract-api-cache';
+const API_CACHE = 'medistraction-api-cache';
 
 // Install event - cache static assets
 sw.addEventListener('install', (event) => {
@@ -57,7 +47,7 @@ sw.addEventListener('activate', (event) => {
 				cacheNames
 					.filter((cacheName) => {
 						// Delete old version caches
-						return cacheName.startsWith('meditract-') && cacheName !== CACHE_NAME && cacheName !== AUDIO_CACHE && cacheName !== API_CACHE;
+						return cacheName.startsWith('medistraction-') && cacheName !== CACHE_NAME && cacheName !== AUDIO_CACHE && cacheName !== API_CACHE;
 					})
 					.map((cacheName) => {
 						console.log('[SW] Deleting old cache:', cacheName);
