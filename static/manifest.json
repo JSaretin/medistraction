@@ -1,0 +1,75 @@
+{
+	"name": "MediTract - Distraction Immunity Training",
+	"short_name": "MediTract",
+	"description": "Train your mind to resist distractions through mindful meditation with randomized sound interruptions",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#1a1a2e",
+	"theme_color": "#6366f1",
+	"orientation": "portrait",
+	"categories": ["health", "lifestyle", "productivity"],
+	"icons": [
+		{
+			"src": "/favicon.png",
+			"sizes": "any",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Start Meditation",
+			"short_name": "Meditate",
+			"description": "Start a meditation session",
+			"url": "/",
+			"icons": [
+				{
+					"src": "/favicon.png",
+					"sizes": "any"
+				}
+			]
+		},
+		{
+			"name": "Upload Sounds",
+			"short_name": "Sounds",
+			"description": "Manage your distraction sounds",
+			"url": "/upload",
+			"icons": [
+				{
+					"src": "/favicon.png",
+					"sizes": "any"
+				}
+			]
+		},
+		{
+			"name": "Progress Dashboard",
+			"short_name": "Dashboard",
+			"description": "View your meditation progress",
+			"url": "/dashboard",
+			"icons": [
+				{
+					"src": "/favicon.png",
+					"sizes": "any"
+				}
+			]
+		}
+	]
+}

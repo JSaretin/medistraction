@@ -1,0 +1,29 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+*.log
+.vercel
+.output
+.netlify
+dist
+
+# PocketBase
+pocketbase
+pb_data
+pb_migrations
+*.zip
+
+# PocketBase
+pocketbase
+pb_data/
+pb_migrations/
+*.db
+*.db-shm
+*.db-wal
