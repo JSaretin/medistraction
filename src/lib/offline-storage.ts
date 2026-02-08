@@ -2,7 +2,7 @@
 
 import { browser } from '$app/environment';
 
-const DB_NAME = 'meditract-db';
+const DB_NAME = 'medistraction-db';
 const DB_VERSION = 1;
 
 // Store names

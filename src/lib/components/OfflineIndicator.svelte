@@ -32,7 +32,7 @@
 			<span class="icon">🔄</span>
 			<div class="message">
 				<strong>Update available</strong>
-				<span class="sub">A new version of MediTract is ready</span>
+				<span class="sub">A new version of Medistraction is ready</span>
 			</div>
 			<button class="update-btn" on:click={handleUpdate}>Update</button>
 		</div>

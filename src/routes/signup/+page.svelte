@@ -43,7 +43,7 @@
 
 <div class="container">
 	<div class="signup-card">
-		<h1>🧘 Join MediTract</h1>
+		<h1>🧘 Join Medistraction</h1>
 		<p class="subtitle">Start your journey to distraction immunity</p>
 
 		{#if error}

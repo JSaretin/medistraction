@@ -5,13 +5,10 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html',
-			precompress: false,
-			strict: true
-		})
+		adapter: adapter(),
+		serviceWorker: {
+			register: false // We'll register the service worker manually for better control
+		}
 	}
 };
 

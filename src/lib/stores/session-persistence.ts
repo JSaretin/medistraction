@@ -1,7 +1,7 @@
 import { browser } from '$app/environment';
 import type { SessionState } from './session';
 
-const SESSION_STORAGE_KEY = 'meditract_session_state';
+const SESSION_STORAGE_KEY = 'medistraction_session_state';
 const MAX_SESSION_AGE = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 export interface PersistedSessionState {
