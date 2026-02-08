@@ -323,4 +323,34 @@
 	.insight-text strong {
 		color: var(--primary);
 	}
+
+	@media (max-width: 600px) {
+		.container {
+			padding: 1rem 0.75rem;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		.stats-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.sessions-section,
+		.insights-section {
+			padding: 1.5rem 1rem;
+		}
+
+		.session-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		.session-details {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+	}
 </style>

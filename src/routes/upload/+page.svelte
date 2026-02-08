@@ -600,7 +600,7 @@
 
 	.playlist-checkboxes {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 		gap: 0.75rem;
 		padding: 1rem;
 		background: var(--background);
@@ -1028,6 +1028,34 @@
 	}
 
 	@media (max-width: 600px) {
+		.container {
+			padding: 1rem 0.75rem;
+		}
+
+		.upload-section,
+		.sounds-section {
+			padding: 1.5rem 1rem;
+		}
+
+		.playlist-checkboxes {
+			grid-template-columns: 1fr;
+		}
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		.sound-card {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+
+		.sound-actions {
+			width: 100%;
+			justify-content: flex-end;
+		}
+
 		.modal {
 			max-height: 90vh;
 		}
