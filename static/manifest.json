@@ -5,11 +5,18 @@
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
-	"display_override": ["standalone", "fullscreen"],
+	"display_override": [
+		"standalone",
+		"fullscreen"
+	],
 	"background_color": "#0f0f23",
 	"theme_color": "#6366f1",
-	"orientation": "any",
-	"categories": ["health", "lifestyle", "productivity"],
+	"orientation": "portrait",
+	"categories": [
+		"health",
+		"lifestyle",
+		"productivity"
+	],
 	"prefer_related_applications": false,
 	"icons": [
 		{
