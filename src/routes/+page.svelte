@@ -144,12 +144,17 @@
 		z-index: 1000;
 		backdrop-filter: blur(10px);
 		background: rgba(26, 26, 46, 0.95);
+		/* Add safe area padding for mobile notches/status bars */
+		padding-top: env(safe-area-inset-top);
 	}
 
 	.nav-container {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0.75rem 1.5rem;
+		/* Add horizontal safe area padding */
+		padding-left: max(1.5rem, env(safe-area-inset-left));
+		padding-right: max(1.5rem, env(safe-area-inset-right));
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -175,7 +180,11 @@
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
-		padding: 6rem 1rem 6rem;
+		/* Add enough padding to clear the fixed navigation bars */
+		padding-top: calc(5rem + env(safe-area-inset-top));
+		padding-left: max(1rem, env(safe-area-inset-left));
+		padding-right: max(1rem, env(safe-area-inset-right));
+		padding-bottom: calc(5rem + env(safe-area-inset-bottom));
 		max-width: 600px;
 		margin: 0 auto;
 	}
@@ -381,10 +390,16 @@
 	@media (max-width: 600px) {
 		.nav-container {
 			padding: 0.75rem 1rem;
+			padding-left: max(1rem, env(safe-area-inset-left));
+			padding-right: max(1rem, env(safe-area-inset-right));
 		}
 
 		main {
-			padding: 5rem 1rem 6rem;
+			/* Increase padding to account for fixed navbars + safe areas */
+			padding-top: calc(5rem + env(safe-area-inset-top));
+			padding-left: max(1rem, env(safe-area-inset-left));
+			padding-right: max(1rem, env(safe-area-inset-right));
+			padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
 		}
 
 		h1 {
@@ -430,6 +445,9 @@
 		display: flex;
 		justify-content: space-around;
 		padding: 0.75rem 0 calc(0.75rem + env(safe-area-inset-bottom));
+		/* Add horizontal safe area padding */
+		padding-left: env(safe-area-inset-left);
+		padding-right: env(safe-area-inset-right);
 		z-index: 100;
 		backdrop-filter: blur(10px);
 		background: rgba(26, 26, 46, 0.95);

@@ -121,6 +121,16 @@ function createSessionStore() {
 				nextSoundAt: state.nextSoundAt ? state.nextSoundAt + elapsedMs : null
 			}));
 		},
+		rescheduleNextSound: () => {
+			update((state) => {
+				const now = Date.now();
+				const nextDelay = getRandomDelay(state.config.minWait, state.config.maxWait);
+				return {
+					...state,
+					nextSoundAt: now + nextDelay * 1000
+				};
+			});
+		},
 		restoreSession: (state: SessionState) => {
 			set(state);
 		}

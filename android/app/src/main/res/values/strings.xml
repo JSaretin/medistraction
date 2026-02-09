@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Medistraction</string>
+    <string name="title_activity_main">Medistraction</string>
+    <string name="package_name">com.medistraction.app</string>
+    <string name="custom_url_scheme">com.medistraction.app</string>
+</resources>
