@@ -115,6 +115,12 @@ function createSessionStore() {
 				config: { ...state.config, ...config }
 			}));
 		},
+		adjustNextSoundTime: (elapsedMs: number) => {
+			update((state) => ({
+				...state,
+				nextSoundAt: state.nextSoundAt ? state.nextSoundAt + elapsedMs : null
+			}));
+		},
 		restoreSession: (state: SessionState) => {
 			set(state);
 		}
