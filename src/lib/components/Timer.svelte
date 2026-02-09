@@ -52,22 +52,26 @@
 	}
 
 	async function endSession() {
-		if (confirm('Are you sure you want to end this session?')) {
-			// Save as incomplete if authenticated
-			if (isAuthenticated()) {
-				try {
-					await createSession({
-						duration: $sessionStore.config.sessionDuration,
-						sounds_played: $sessionStore.soundsPlayed,
-						completed: false,
-						config: $sessionStore.config
-					});
-				} catch (error) {
-					console.error('Error saving session:', error);
-				}
-			}
+		if (!confirm('Are you sure you want to end this session?')) {
+			return;
+		}
 
-			sessionStore.endSession();
+		// End session immediately (don't wait for save)
+		sessionStore.endSession();
+
+		// Try to save as incomplete in background if authenticated
+		if (isAuthenticated()) {
+			try {
+				await createSession({
+					duration: $sessionStore.config.sessionDuration,
+					sounds_played: $sessionStore.soundsPlayed,
+					completed: false,
+					config: $sessionStore.config
+				});
+			} catch (error) {
+				console.error('Error saving session:', error);
+				// Session is already ended, so this error won't block the user
+			}
 		}
 	}
 </script>
